@@ -30,7 +30,7 @@ public Action Command_Status(int client, int args) {
 	JSON_Object json = new JSON_Object();
 	json.SetInt("get5_gamestate", view_as<int>(Get5_GetGameState()));
 	json.SetBool("system2_available", system2Available);
-	json.SetString("plugin_version", "0.1.1");
+	json.SetString("plugin_version", "0.1.3");
 	json.SetString("api_url", url);
 
 	char buffer[512];
@@ -50,7 +50,6 @@ public void Get5_OnEvent(const char[] eventJson) {
 	httpRequest.SetHeader("Content-Type", "application/json");
 	httpRequest.SetData(eventJson);
 	httpRequest.POST();
-
 	delete httpRequest;
 }
 

@@ -58,5 +58,6 @@ public void Get5_OnEvent(const char[] eventJson) {
 public void HttpResponseCallback(bool success, const char[] error, System2HTTPRequest request, System2HTTPResponse response, HTTPRequestMethod method) {
 	if (!success) {
 		LogMessage("Failed to send request");
+		LogMessage(error);
 	}
 }

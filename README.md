@@ -1,6 +1,6 @@
 # Get5 Event API
 
-This sourcemod plugin sends [Get5 Event logs](https://github.com/splewis/get5/wiki/Event-logs) as a post request to a server set with the CVAR `get5_eventapi_url`.
+This sourcemod plugin sends [Get5 Event logs](https://github.com/splewis/get5/wiki/Event-logs) as json http post requests to a webserver set with the CVAR `get5_eventapi_url`.
 
 #### CVARs
 ```

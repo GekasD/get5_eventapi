@@ -30,7 +30,7 @@ public Action Command_Status(int client, int args) {
 	JSON_Object json = new JSON_Object();
 	json.SetInt("get5_gamestate", view_as<int>(Get5_GetGameState()));
 	json.SetBool("system2_available", system2Available);
-	json.SetString("plugin_version", "0.0.1");
+	json.SetString("plugin_version", "0.1.1");
 	json.SetString("api_url", url);
 
 	char buffer[512];

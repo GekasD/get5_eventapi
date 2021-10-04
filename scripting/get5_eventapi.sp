@@ -35,16 +35,15 @@ public Action Command_Status(int client, int args) {
 
 	char buffer[512];
 	json.Encode(buffer, sizeof(buffer), true);
+	json_cleanup_and_delete(json);
 
 	ReplyToCommand(client, buffer);
 
-	delete json;
 	return Plugin_Handled;
 }
 
 public void Get5_OnEvent(const char[] eventJson) {
-	// Get our url
-	char url[1024];
+	char url[1024]; // Get our url
 	GetConVarString(g_ApiUrlCvar, url, sizeof(url));
 
 	System2HTTPRequest httpRequest = new System2HTTPRequest(HttpResponseCallback, url);

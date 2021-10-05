@@ -5,7 +5,7 @@ This sourcemod plugin sends [Get5 Events](https://github.com/splewis/get5/wiki/E
 #### CVARs
 ```
 get5_eventapi_url - Set's the server url to send the post request to
-get5_eventapi_status - Checks if the plugin is correctly loaded on the server
+get5_eventapi_status - Prints info about the plugin
 ```
 
 ### Server Requirements

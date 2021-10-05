@@ -7,13 +7,15 @@
 #pragma semicolon 1
 #pragma newdecls required
 
+#define PLUGIN_VERSION "0.1.3"
+
 ConVar g_ApiUrlCvar;
 
 public Plugin myinfo = {
 	name = "Get5 Event API",
 	author = "Demetrius",
 	description = "Sends get5 events as JSON HTTP POST requests.",
-	version = "0.0.1",
+	version = PLUGIN_VERSION,
 	url = "https://github.com/stalsus/get5_eventapi"
 };
 
@@ -30,7 +32,7 @@ public Action Command_Status(int client, int args) {
 	JSON_Object json = new JSON_Object();
 	json.SetInt("get5_gamestate", view_as<int>(Get5_GetGameState()));
 	json.SetBool("system2_available", system2Available);
-	json.SetString("plugin_version", "0.1.3");
+	json.SetString("plugin_version", PLUGIN_VERSION);
 	json.SetString("api_url", url);
 
 	char buffer[512];

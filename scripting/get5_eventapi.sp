@@ -1,13 +1,13 @@
 #include <cstrike>
 #include <sourcemod>
-#include "include/get5.inc"
+#include "get5.inc" // Load get5.inc from the sourcemod includes folder (It contains Get5_OnEvent which we are using here)
 #include <system2> // https://github.com/dordnung/System2
 #include <json>  // https://github.com/clugg/sm-json
 
 #pragma semicolon 1
 #pragma newdecls required
 
-#define PLUGIN_VERSION "0.1.3"
+#define PLUGIN_VERSION "1.0.1"
 
 ConVar g_ApiUrlCvar;
 
@@ -35,7 +35,7 @@ public Action Command_Status(int client, int args) {
 	json.SetString("plugin_version", PLUGIN_VERSION);
 	json.SetString("api_url", url);
 
-	char buffer[512];
+	char buffer[2048];
 	json.Encode(buffer, sizeof(buffer), true);
 	json_cleanup_and_delete(json);
 
